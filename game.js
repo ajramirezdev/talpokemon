@@ -31,9 +31,36 @@ function showHideInstructions() {
   });
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  playIntro();
-});
+showHideInstructions();
+
+const muteBtn = document.getElementById("bgm-btn");
+const muteImg = document.getElementById("mute-img");
+const introBGM = {
+  muted: true,
+};
+
+function mute() {
+  muteBtn.addEventListener("click", () => {
+    audioClick();
+    console.log(introBGM.muted);
+    if (introBGM.muted) {
+      muteImg.setAttribute("src", "assets/unmute-icon.png");
+      playIntro();
+      introBGM.muted = false;
+    } else {
+      muteImg.setAttribute("src", "assets/mute-icon.png");
+      pauseIntro();
+      introBGM.muted = true;
+    }
+  });
+}
+
+mute();
+
+// Code below this line causes error because chrome does not allow autoplaying audio when website load https://developer.chrome.com/blog/autoplay/
+// window.addEventListener("DOMContentLoaded", () => {
+//   playIntro();
+// });
 
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
@@ -156,8 +183,6 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
-showHideInstructions();
-
 const battle = {
   start: false,
 };
@@ -186,7 +211,7 @@ function animate() {
     playBattleAudio();
     document.getElementById("battle").style.opacity = 1;
     window.cancelAnimationFrame(animationId);
-    initializeBattle(); //TURN BACK TO 3 AFTER FINISHING RESTART BUTTON
+    initializeBattle();
     homeBtn.style.display = "none";
     battleStart();
     return;
