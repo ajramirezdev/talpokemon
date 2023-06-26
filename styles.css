@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+body {
+  background-color: burlywood;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  position: relative;
+}
+
+#main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('assets/main-menu-bg.png');
+}
+
+#main-menu img {
+  width: 80%;
+}
+
+#instructions {
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  padding: 30px;
+  background-image: url('assets/instructions-bg.png');
+}
+
+.instructions-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.instructions-intro {
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
+}
+
+.instructions-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+#home-btn,
+#restart-btn {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  display: none;
+}
+
+#home-btn {
+  right: 25px;
+  top: 20px;
+}
+
+#restart-btn {
+  right: 25px;
+  top: 80px;
+}
+
+#home-btn img,
+#restart-btn img {
+  width: 24px;
+}
+
+#battle {
+  background-color: black;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  display: block;
+}
+
+#attacks-section {
+  background-color: white;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid rgb(39, 39, 39);
+  display: flex;
+}
+
+#attacks {
+  display: grid;
+  width: 70%;
+  grid-template-columns: 1fr 1fr;
+}
+
+#attacks button {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  border-right: 5px solid rgb(39, 39, 39);
+  font-size: 30px;
+}
+
+#attacks button :hover {
+  background-color: rgb(238, 238, 238);
+}
+
+#attack-status {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-align: center;
+}
+
+.hp-layout {
+  background-color: white;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  border: 5px solid rgb(39, 39, 39);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#enemy-healthbar {
+  top: 20px;
+  left: 50px;
+}
+
+#my-healthbar {
+  bottom: 150px;
+  right: 50px;
+}
+
+.healthbar {
+  position: relative;
+}
+
+.total-healthbar {
+  height: 20px;
+  border: 3px solid rgb(39, 39, 39);
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.remaining-healthbar {
+  background-color: green;
+  height: 14px;
+  border-radius: 15px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 98.5%;
+}
+
+.health-points {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+#click-block {
+  background-color: white;
+  border: 5px solid rgb(39, 39, 39);
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 310px;
+  display: none;
+  padding: 10px;
+}
+
+#win-screen,
+#lose-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  gap: 20px;
+  font-size: 55px;
+}
+
+#win-screen {
+  z-index: 1;
+  display: none;
+}
+
+#lose-screen {
+  z-index: 1;
+  display: none;
+}
+
+.comic-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ffcc03;
+  border: 2px solid #386abb;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #386abb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button:hover {
+  background-color: #ffe349;
+  color: #d05334;
+  border: 2px solid black;
+  box-shadow: 5px 5px 0px black;
+}
+
+.comic-button:active {
+  background-color: #ffcc03;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+.comic-button-two {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #d05334;
+  background-color: #ffe349;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px black;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button-two:hover {
+  background-color: #ffcc03;
+  color: white;
+  border: 2px solid #386abb;
+  box-shadow: 5px 5px 0px #386abb;
+}
+
+.comic-button-two:active {
+  background-color: #ffcc03;
+  box-shadow: none;
+  transform: translateY(4px);
+}

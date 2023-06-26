@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaLPoKeMoN</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="audio.js" defer></script>
+    <script src="traversal.js" defer></script>
+    <script src="battle-zone.js" defer></script>
+    <script src="collisions.js" defer></script>
+    <script src="classes.js" defer></script>
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <button id="home-btn" class="main-menu-btn comic-button">
+        <img src="assets/home-icon.png" alt="home icon" />
+      </button>
+      <button id="restart-btn" class="comic-button-two">
+        <img src="assets/restart-icon.png" alt="restart icon" />
+      </button>
+      <div id="main-menu">
+        <img src="assets/tlpkmn-game-title.png" alt="game title logo" />
+        <div>
+          <button class="comic-button" id="play">PLAY</button>
+          <button class="comic-button-two" id="instructions-btn">
+            HOW TO PLAY
+          </button>
+        </div>
+      </div>
+      <div id="instructions">
+        <div class="instructions-header">
+          <p>HOW TO PLAY:</p>
+          <button class="comic-button" id="close">close</button>
+        </div>
+        <div>
+          <p class="instructions-intro">
+            Defeat one of the Elite Five Chickens and become the Talpokemon
+            Master
+          </p>
+        </div>
+        <div class="instructions-main">
+          <p>Move around the map using the arrow keys.</p>
+          <p>
+            If you walk close enough to one of the Elite Five Chickens, they
+            will challenge you into battle!
+          </p>
+          <p>But don't worry you have your own chicken.</p>
+          <p>
+            Use your mouse to click on the move you want your chicken to perform
+            to fight back.
+          </p>
+        </div>
+      </div>
+      <div id="battle"></div>
+      <canvas></canvas>
+      <div id="health-interface">
+        <div id="enemy-healthbar" class="hp-layout">
+          <p>Llamado</p>
+          <div class="healthbar">
+            <div class="total-healthbar"></div>
+            <div class="remaining-healthbar"></div>
+          </div>
+          <p class="health-points">50/50</p>
+        </div>
+        <div id="my-healthbar" class="hp-layout">
+          <p>Dejado</p>
+          <div class="healthbar">
+            <div class="total-healthbar"></div>
+            <div class="remaining-healthbar"></div>
+          </div>
+          <p class="health-points">50/50</p>
+        </div>
+      </div>
+      <div id="attack-interface">
+        <div id="attacks-section">
+          <div id="attacks">
+            <button>Scratch</button>
+            <button>Peck</button>
+          </div>
+          <div id="attack-status">
+            <p>Attack Status</p>
+          </div>
+        </div>
+      </div>
+      <div id="click-block"></div>
+      <div id="win-screen">
+        <p>YOU WIN</p>
+        <div>
+          <button class="main-menu-btn comic-button-two">MAIN MENU</button>
+          <button class="keep-exploring-btn comic-button">
+            KEEP EXPLORING
+          </button>
+        </div>
+      </div>
+      <div id="lose-screen">
+        <p>YOU LOSE</p>
+        <button class="main-menu-btn comic-button-two">MAIN MENU</button>
+      </div>
+    </div>
+  </body>
+</html>
